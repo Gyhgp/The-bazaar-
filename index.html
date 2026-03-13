@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Bazaar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="bg-pattern" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><i class="fa-solid fa-skull"></i></div>
+        <div class="brand-text">
+          <div class="brand-title">THE BAZAAR</div>
+          <div class="brand-tagline">Where Ghouls Find Treasures</div>
+        </div>
+      </div>
+
+      <nav class="top-nav" aria-label="Navegación principal">
+        <a class="nav-link" href="dolls.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Muñecas</span></a>
+        <a class="nav-link" href="#lore"><i class="fa-solid fa-crown"></i><span>Lore</span></a>
+        <a class="nav-link" href="#favoritos"><i class="fa-regular fa-heart"></i><span>Favoritos</span></a>
+        <div class="nav-actions">
+          <a class="pill" id="cart-btn" href="#carrito"><i class="fa-solid fa-cart-shopping"></i><span>Car</span></a>
+          <button class="pill" type="button"><span>nav</span></button>
+        </div>
+      </nav>
+    </div>
+    <div class="header-rule"></div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div class="hero-card">
+          <img class="hero-image" alt="The Bazaar" src="assets/bazaar-hero.png" />
+        </div>
+
+        <h1 class="hero-title">BIENVENIDO AL BAZAAR MÍSTICO</h1>
+        <p class="hero-subtitle">El mercado ancestral donde las criaturas de la noche encuentran tesoros únicos y místicos.</p>
+        <p class="hero-quote"><em>Cada pieza cuenta una historia... ¿Cuál será la tuya?</em></p>
+
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon"><i class="fa-solid fa-box"></i></div>
+            <div class="feature-text">
+              <div class="feature-title">ENVÍO MÍSTICO</div>
+              <div class="feature-desc">Entregas protegidas por sellos antiguos.</div>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon"><i class="fa-regular fa-clock"></i></div>
+            <div class="feature-text">
+              <div class="feature-title">ATENCIÓN ETERNA</div>
+              <div class="feature-desc">Soporte nocturno para toda criatura.</div>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="feature-text">
+              <div class="feature-title">GARANTÍA ANCESTRAL</div>
+              <div class="feature-desc">Calidad verificada por el consejo arcano.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="box-model-demo" aria-label="Demostración del modelo de caja">
+      <div class="section-head section-head--tight">
+        <div class="section-kicker">&lt;section&gt;</div>
+        <h2 class="section-title">MODELO DE CAJA</h2>
+        <p class="section-subtitle">Ejemplo de tarjeta usando margin, padding, border y control de tamaño.</p>
+      </div>
+
+      <div class="box-card">
+        <div class="box-card__tag">&lt;div class=&quot;box-card&quot;&gt;</div>
+        <h3 class="box-card__title">Monster High: Tesoro destacado</h3>
+
+        <div class="box-card__content">
+          <div class="box-card__media">
+            <img class="box-card__img" src="assets/draculaura.jpg" alt="Draculaura - Monster High" />
+          </div>
+          <p class="box-card__text">En Monster High, cada accesorio cuenta una historia. Esta tarjeta demuestra cómo el espacio externo (<strong>margin</strong>), el espacio interno (<strong>padding</strong>) y el borde (<strong>border</strong>) afectan el tamaño y la separación de un contenedor, como si fuera una ficha de colección del bazaar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chronicles" id="lore">
+      <div class="section-head section-head--tight">
+        <div class="section-kicker">&lt;section&gt;</div>
+        <h2 class="section-title">CRÓNICAS DEL BAZAAR</h2>
+        <p class="section-subtitle">Descubre los secretos y leyendas detrás de cada tesoro</p>
+      </div>
+
+      <div class="content-grid">
+        <div class="content-left">
+          <article class="story">
+            <div class="story-tag">&lt;article&gt;</div>
+            <img class="story-image" alt="Historia" src="assets/basic-wave-1.jpg" />
+            <div class="story-body">
+              <div class="story-title">LA HISTORIA DE THE BAZAAR</div>
+              <p class="story-text">En las sombras de Monster High, existe un mercado mágico donde los tesoros más antiguos y preciados aguardan por sus nuevos dueños. The Bazaar es un lugar donde la historia se encuentra con la magia, donde cada pieza cuenta una historia de épocas olvidadas y criaturas legendarias.</p>
+            </div>
+          </article>
+
+          <article class="story">
+            <div class="story-tag">&lt;article&gt;</div>
+            <img class="story-image" alt="Tesoros" src="assets/draculaura.jpg" />
+            <div class="story-body">
+              <div class="story-title">TESOROS CON ALMA</div>
+              <p class="story-text">Cada objeto en nuestra colección ha sido cuidadosamente seleccionado por su valor histórico y energía única. Desde los diarios encantados de las primeras estudiantes hasta las joyas victorianas de la época dorada, cada tesoro lleva consigo el espíritu de Monster High.</p>
+            </div>
+          </article>
+        </div>
+
+        <aside class="content-right" id="favoritos">
+          <div class="aside-tag">&lt;aside&gt;</div>
+
+          <div class="panel">
+            <div class="panel-title">OFERTAS MÍSTICAS</div>
+            <ul class="panel-list">
+              <li>15% OFF en tu primera compra</li>
+              <li>Envío gratis en pedidos +$100</li>
+              <li>Puntos de fidelidad ancestral</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <div class="panel-title">CRÓNICAS NOCTURNAS</div>
+            <p class="panel-text">Suscríbete para recibir historias místicas y ofertas exclusivas</p>
+            <form class="subscribe" action="#" method="post">
+              <input class="subscribe-input" type="email" name="email" placeholder="tu@email.com" required />
+              <button class="subscribe-btn" type="submit">Suscribirse</button>
+            </form>
+          </div>
+
+          <div class="panel panel--stats">
+            <div class="panel-title">ESTADÍSTICAS DEL BAZAAR</div>
+            <div class="stats">
+              <div class="stat"><span class="stat-label">Tesoros:</span><span class="stat-value">500+</span></div>
+              <div class="stat"><span class="stat-label">Ghouls:</span><span class="stat-value">10,000+</span></div>
+              <div class="stat"><span class="stat-label">Entregas:</span><span class="stat-value">50,000+</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="chronicles" id="contacto">
+      <div class="section-head section-head--tight">
+        <div class="section-kicker">&lt;section&gt;</div>
+        <h2 class="section-title">FORMULARIO DE CONTACTO</h2>
+        <p class="section-subtitle">Envíanos tu mensaje para pedidos, dudas o sugerencias</p>
+      </div>
+
+      <div class="content-grid">
+        <div class="content-left">
+          <article class="story">
+            <div class="story-tag">&lt;article&gt;</div>
+            <img class="story-image" alt="Monster High" src="assets/basic-wave-1.jpg" />
+            <div class="story-body">
+              <div class="story-title">ESCRÍBENOS</div>
+              <p class="story-text">Este formulario es parte del proyecto personal y demuestra el uso de formularios HTML.</p>
+            </div>
+          </article>
+        </div>
+
+        <aside class="content-right">
+          <div class="panel">
+            <div class="panel-title">CONTACTO</div>
+            <!-- <form> agrupa todos los campos del formulario y define cómo se envían con action/method -->
+            <form class="contact-form" action="#" method="post">
+              <div class="form-field">
+                <!-- <label> describe el campo y se asocia al input con for="..." -->
+                <label class="form-label" for="nombre">Nombre</label>
+                <!-- <input> permite capturar datos. type="text" para texto general -->
+                <input class="form-input" id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="correo">Correo</label>
+                <!-- type="email" valida formato de correo automáticamente -->
+                <input class="form-input" id="correo" name="correo" type="email" placeholder="tu@email.com" required />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="telefono">Teléfono</label>
+                <!-- type="tel" está pensado para números telefónicos -->
+                <input class="form-input" id="telefono" name="telefono" type="tel" placeholder="Ej. 55 1234 5678" required />
+              </div>
+
+              <div class="form-field">
+                <label class="form-label" for="fecha">Fecha preferida</label>
+                <!-- type="date" muestra un selector de fecha -->
+                <input class="form-input" id="fecha" name="fecha" type="date" required />
+              </div>
+
+              <div class="form-field form-field--full">
+                <label class="form-label" for="motivo">Motivo</label>
+                <!-- <select> crea un menú desplegable con opciones -->
+                <select class="form-input" id="motivo" name="motivo" required>
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option value="pedido">Pedido</option>
+                  <option value="duda">Duda</option>
+                  <option value="sugerencia">Sugerencia</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-field form-field--full">
+                <label class="form-label" for="mensaje">Mensaje</label>
+                <!-- <textarea> sirve para textos largos (mensajes) -->
+                <textarea class="form-textarea" id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+              </div>
+
+              <div class="form-actions">
+                <!-- <button> envía el formulario (type="submit") -->
+                <button class="subscribe-btn" type="submit">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="footer-rule"></div>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-title">THE BAZAAR</div>
+        <p class="footer-text">El mercado místico ancestral de Monster High, donde los tesoros encuentran a sus verdaderos dueños.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">ENLACES</div>
+        <a class="footer-link" href="#">Sobre Nosotros</a>
+        <a class="footer-link" href="#">Tesoros Místicos</a>
+        <a class="footer-link" href="#">Política de Privacidad</a>
+        <a class="footer-link" href="#">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">CATEGORÍAS</div>
+        <a class="footer-link" href="#">Coleccionables</a>
+        <a class="footer-link" href="#">Accesorios</a>
+        <a class="footer-link" href="#">Joyería Antigua</a>
+        <a class="footer-link" href="#">Ediciones Místicas</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">CONTACTO</div>
+        <div class="footer-text">Email: bazaar@monsterhigh.com</div>
+        <div class="footer-text">Portal: The Mystic Quarter</div>
+        <div class="footer-text">Monster High, MH 13666</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-small">© 2026 The Bazaar - Monster High. Todos los derechos reservados. | Diseño Victoriano Gótico ✦</div>
+      <div class="footer-small footer-small--hint">Etiquetas HTML5 visibles para fines educativos: header, nav, main, section, article, aside, footer</div>
+    </div>
+  </footer>
+
+  <button class="cookie" type="button">Gestionar las cookies o rechazarlas</button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

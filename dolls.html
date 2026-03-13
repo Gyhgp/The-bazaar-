@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muñecas | The Bazaar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="bg-pattern" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><i class="fa-solid fa-skull"></i></div>
+        <div class="brand-text">
+          <div class="brand-title">THE BAZAAR</div>
+          <div class="brand-tagline">Where Ghouls Find Treasures</div>
+        </div>
+      </div>
+
+      <nav class="top-nav" aria-label="Navegación principal">
+        <a class="nav-link" href="dolls.html"><i class="fa-solid fa-wand-magic-sparkles"></i><span>Muñecas</span></a>
+        <a class="nav-link" href="index.html#contacto"><i class="fa-regular fa-envelope"></i><span>Contacto</span></a>
+        <div class="nav-actions">
+          <a class="pill" id="cart-btn" href="#carrito"><i class="fa-solid fa-cart-shopping"></i><span>Car</span></a>
+          <button class="pill" type="button"><span>nav</span></button>
+        </div>
+      </nav>
+    </div>
+    <div class="header-rule"></div>
+  </header>
+
+  <main>
+    <section class="chronicles" id="munecas">
+      <div class="section-head section-head--tight">
+        <div class="section-kicker">&lt;section&gt;</div>
+        <h1 class="section-title">MUÑECAS MONSTER HIGH</h1>
+        <p class="section-subtitle">Carrusel y catálogo de 50+ muñecas (sin repetir nombres). Las imágenes son temporales hasta pegar URLs externas.</p>
+      </div>
+
+      <div class="dolls-carousel" aria-label="Carrusel de muñecas">
+        <button class="dolls-carousel__btn" type="button" data-carousel="prev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="dolls-carousel__viewport" tabindex="0">
+          <div class="dolls-carousel__track"></div>
+        </div>
+        <button class="dolls-carousel__btn" type="button" data-carousel="next" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+
+      <div class="section-head section-head--tight">
+        <div class="section-kicker">&lt;section&gt;</div>
+        <h2 class="section-title">CATÁLOGO</h2>
+        <p class="section-subtitle">Toca una muñeca para ver su detalle.</p>
+      </div>
+
+      <div class="dolls-grid" aria-label="Catálogo de muñecas"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="footer-rule"></div>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-title">THE BAZAAR</div>
+        <p class="footer-text">Catálogo de muñecas y tesoros con estética victoriana gótica.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">ENLACES</div>
+        <a class="footer-link" href="dolls.html">Muñecas</a>
+        <a class="footer-link" href="index.html#contacto">Contacto</a>
+        <a class="footer-link" href="index.html#lore">Lore</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">NOTA</div>
+        <p class="footer-text">Este apartado usa placeholders de imagen hasta que se agreguen URLs o imágenes locales.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">CONTACTO</div>
+        <div class="footer-text">Email: bazaar@monsterhigh.com</div>
+        <div class="footer-text">Portal: The Mystic Quarter</div>
+        <div class="footer-text">Monster High, MH 13666</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-small">© 2026 The Bazaar - Monster High. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/dolls.js"></script>
+</body>
+</html>
