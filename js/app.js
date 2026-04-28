@@ -573,6 +573,213 @@
     });
   }
 
+  function initDomDemo() {
+    const card = qs('.box-card');
+    if (!card) return;
+
+    const title = qs('.box-card__title', card);
+    const img = qs('.box-card__img', card);
+    const content = qs('.box-card__content', card);
+    const status = qs('.dom-demo-status', card);
+    const buttons = qsa('.dom-demo-btn[data-dom-action]', card);
+
+    if (!buttons.length) return;
+
+    const originalTitle = title ? title.textContent : '';
+    const originalSrc = img ? img.getAttribute('src') : '';
+    const originalAlt = img ? img.getAttribute('alt') : '';
+    const altImages = [
+      { src: 'assets/draculaura.jpg', alt: 'Draculaura - Monster High' },
+      { src: 'assets/frankie.jpg', alt: 'Frankie Stein - Monster High' },
+      { src: 'assets/clawdeen.jpg', alt: 'Clawdeen Wolf - Monster High' },
+      { src: 'assets/lagoona.jpg', alt: 'Lagoona Blue - Monster High' }
+    ];
+    let imgIndex = 0;
+
+    function setStatus(message) {
+      if (!status) return;
+      status.textContent = message;
+    }
+
+    function toggleHighlight() {
+      card.classList.toggle('is-highlight');
+      setStatus(card.classList.contains('is-highlight') ? 'Resaltado activado (classList).' : 'Resaltado desactivado (classList).');
+    }
+
+    function changeTitle() {
+      if (!title) return;
+      const next = title.textContent === originalTitle ? 'Monster High: Cambio con DOM (textContent)' : originalTitle;
+      title.textContent = next;
+      setStatus('Título actualizado con textContent.');
+    }
+
+    function switchImage() {
+      if (!img) return;
+      imgIndex = (imgIndex + 1) % altImages.length;
+      img.setAttribute('src', altImages[imgIndex].src);
+      img.setAttribute('alt', altImages[imgIndex].alt);
+      setStatus('Imagen actualizada con setAttribute.');
+    }
+
+    function toggleExtra() {
+      if (!content) return;
+      const existing = qs('.dom-demo-extra', card);
+      if (existing) {
+        existing.remove();
+        setStatus('Texto extra eliminado con remove().');
+        return;
+      }
+
+      const p = document.createElement('p');
+      p.className = 'dom-demo-extra';
+      p.textContent = 'Texto creado dinámicamente con createElement() y appendChild().';
+      p.style.marginTop = '10px';
+      p.style.color = 'rgba(235,225,200,.72)';
+      content.appendChild(p);
+      setStatus('Texto extra agregado con createElement + appendChild.');
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const action = btn.getAttribute('data-dom-action');
+        if (action === 'toggle-highlight') toggleHighlight();
+        if (action === 'change-title') changeTitle();
+        if (action === 'switch-image') switchImage();
+        if (action === 'toggle-extra') toggleExtra();
+      });
+    });
+
+    if (img && originalSrc && originalAlt) {
+      img.setAttribute('src', originalSrc);
+      img.setAttribute('alt', originalAlt);
+    }
+    setStatus('Demo DOM lista: usa los botones para modificar la página.');
+  }
+
+  initDomDemo();
+
+  /*
+    COMPONENTE REUTILIZABLE CON BOOTSTRAP
+
+    - Bootstrap aporta clases listas para maquetación y UI (grid, cards, badges, botones)
+      sin escribir tanto CSS. Eso acelera desarrollo y da consistencia visual.
+    - Aquí el "componente" es una tarjeta (card) que se repite con distintos datos.
+    - La reutilización se logra con una función render que recibe datos y crea el
+      mismo bloque de DOM para cada elemento.
+    - Comportamientos dinámicos incluidos:
+      1) Cambio de color/acento (clases Bootstrap tipo border-*, text-bg-*)
+      2) Actualización de datos (contador de likes) + animación simple (.bs-pop)
+  */
+  function initBootstrapCards() {
+    const host = qs('#bs-cards');
+    if (!host) return;
+
+    const items = [
+      {
+        id: 'draculaura',
+        title: 'Draculaura — Diario Nocturno',
+        text: 'Un post corto para demostrar un componente repetible con Bootstrap.',
+        badge: 'Monster High',
+        accent: 'warning',
+        likes: 0
+      },
+      {
+        id: 'frankie',
+        title: 'Frankie — Inventos Relámpago',
+        text: 'JavaScript modifica el DOM: cambia clases y actualiza texto en tiempo real.',
+        badge: 'DOM + JS',
+        accent: 'primary',
+        likes: 0
+      },
+      {
+        id: 'clawdeen',
+        title: 'Clawdeen — Estilo Lunar',
+        text: 'Tarjeta reutilizable: misma estructura, diferentes datos (props simuladas).',
+        badge: 'Bootstrap',
+        accent: 'success',
+        likes: 0
+      }
+    ];
+
+    function makeCard(item) {
+      const col = document.createElement('div');
+      col.className = 'col-12 col-md-6 col-lg-4';
+
+      col.innerHTML =
+        '<div class="card h-100 border-' + item.accent + '" data-bs-item="' + item.id + '">' +
+          '<div class="card-body">' +
+            '<div class="d-flex justify-content-between align-items-start gap-2">' +
+              '<h3 class="card-title h5 mb-1">' + item.title + '</h3>' +
+              '<span class="badge text-bg-' + item.accent + '" data-bs-role="badge">' + item.badge + '</span>' +
+            '</div>' +
+            '<p class="card-text mb-3">' + item.text + '</p>' +
+            '<div class="d-flex flex-wrap gap-2 align-items-center">' +
+              '<button type="button" class="btn btn-primary btn-sm" data-bs-action="like">Me gusta <span class="ms-1" data-bs-role="likes">0</span></button>' +
+              '<button type="button" class="btn btn-outline-light btn-sm" data-bs-action="accent">Cambiar color</button>' +
+              '<small class="text-body-secondary">Componente Bootstrap</small>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+
+      return col;
+    }
+
+    function render() {
+      host.innerHTML = '';
+      items.forEach(function (item) {
+        host.appendChild(makeCard(item));
+      });
+    }
+
+    function nextAccent(current) {
+      const palette = ['primary', 'success', 'warning', 'danger', 'info'];
+      const idx = Math.max(0, palette.indexOf(current));
+      return palette[(idx + 1) % palette.length];
+    }
+
+    function pop(el) {
+      if (!el) return;
+      el.classList.remove('bs-pop');
+      void el.offsetWidth;
+      el.classList.add('bs-pop');
+    }
+
+    host.addEventListener('click', function (e) {
+      const btn = e.target && e.target.closest ? e.target.closest('[data-bs-action]') : null;
+      if (!btn) return;
+
+      const action = btn.getAttribute('data-bs-action');
+      const card = btn.closest('[data-bs-item]');
+      if (!card) return;
+      const id = card.getAttribute('data-bs-item');
+
+      const item = items.find(function (x) {
+        return x.id === id;
+      });
+      if (!item) return;
+
+      if (action === 'like') {
+        item.likes += 1;
+        const likesEl = qs('[data-bs-role="likes"]', card);
+        if (likesEl) likesEl.textContent = String(item.likes);
+        pop(btn);
+        return;
+      }
+
+      if (action === 'accent') {
+        item.accent = nextAccent(item.accent);
+        card.className = 'card h-100 border-' + item.accent;
+        const badge = qs('[data-bs-role="badge"]', card);
+        if (badge) badge.className = 'badge text-bg-' + item.accent;
+        pop(card);
+      }
+    });
+
+    render();
+  }
+
+  initBootstrapCards();
+
   qsa('a.footer-link[href="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
       e.preventDefault();

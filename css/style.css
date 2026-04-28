@@ -397,6 +397,82 @@ main{max-width:1200px;margin:0 auto;padding:18px 18px 70px;}
   line-height:1.35;
 }
 
+ .box-card.is-highlight{
+   box-shadow:0 0 0 3px rgba(227,200,116,.22), var(--shadow);
+ }
+
+ .dom-demo-actions{
+   margin-top:12px;
+   display:flex;
+   flex-wrap:wrap;
+   gap:10px;
+   align-items:center;
+ }
+
+ .dom-demo-btn{
+   height:34px;
+   padding:0 12px;
+   border-radius:10px;
+   border:1px solid rgba(202,166,74,.55);
+   background:rgba(84,52,132,.55);
+   color:rgba(235,225,200,.92);
+   cursor:pointer;
+   font-family:"Cinzel", serif;
+   font-size:12px;
+   letter-spacing:.04em;
+ }
+
+ .dom-demo-btn:hover{filter:brightness(1.08);}
+
+ .dom-demo-status{
+   color:rgba(235,225,200,.72);
+   font-size:12px;
+ }
+
+.bs-host .card{
+  background:linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.48));
+  border-color:rgba(202,166,74,.55);
+  color:rgba(235,225,200,.92);
+  box-shadow:var(--shadow);
+}
+
+.bs-host .card .card-title{
+  font-family:"Cinzel", serif;
+  letter-spacing:.06em;
+  color:var(--gold2);
+}
+
+.bs-host .card .card-text,
+.bs-host .card .text-body-secondary{
+  color:rgba(235,225,200,.72) !important;
+}
+
+.bs-host .badge{
+  border:1px solid rgba(202,166,74,.55);
+  background:rgba(202,166,74,.10);
+  color:rgba(235,225,200,.86);
+}
+
+.bs-host .btn{
+  font-family:"Cinzel", serif;
+  letter-spacing:.04em;
+}
+
+.bs-host .btn-primary{
+  border-color:rgba(202,166,74,.55);
+  background:rgba(84,52,132,.55);
+}
+
+.bs-host .btn-primary:hover{filter:brightness(1.08);}
+
+@keyframes bs-pop{
+  0%{ transform:scale(1); }
+  40%{ transform:scale(1.05); }
+  100%{ transform:scale(1); }
+}
+
+.bs-pop{ animation: bs-pop 260ms ease; }
+
 .product-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);

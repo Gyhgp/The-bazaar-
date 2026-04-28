@@ -417,7 +417,18 @@
     const dolls = buildDolls();
 
     const urls = (window.DOLL_IMAGE_URLS && Array.isArray(window.DOLL_IMAGE_URLS)) ? window.DOLL_IMAGE_URLS : [];
+    const assetImages = {
+      'DRACULAURA': 'assets/draculaura.jpg',
+      'CLAWDEEN WOLF': 'assets/clawdeen.jpg',
+      'FRANKIE STEIN': 'assets/frankie.jpg',
+      'LAGOONA BLUE': 'assets/lagoona.jpg',
+      'CLEO DE NILE': 'assets/poster.png',
+      'NEFERA DE NILE': 'assets/poster.png'
+    };
+
     function imgFor(doll, idx) {
+      const override = assetImages[doll.character];
+      if (override) return override;
       const url = urls[idx];
       if (typeof url === 'string' && url.trim()) return url.trim();
       return placeholderDataUri(doll.character, doll.hue);
